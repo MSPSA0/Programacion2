@@ -5,7 +5,7 @@ def printMatrix(matrix) -> None:
 filas: int = 6
 columnas: int = 6
 matriz: list = []
-producto: int = 0
+producto: int = 1
 
 for i in range(columnas):
     matriz.append([0] * filas)
