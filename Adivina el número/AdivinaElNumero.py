@@ -6,7 +6,7 @@ numeroIngresado: int
 intentos: int = 6
 
 while (True):
-	print("Ingrese el número")
+	print(f"Ingrese el número ({intentos} intento{'s' if intentos > 1 else ''})")
 	numeroIngresado = int(input())
 	
 	if (numeroIngresado == numeroSecreto):
