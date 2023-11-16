@@ -26,12 +26,24 @@ def cifrarASCII(texto: str, desplazamiento: int) -> str:
         textoCifrado += chr(ord(c) + desplazamiento)
     return textoCifrado
 
+def cifrar(texto: str, desplazamiento: int) -> str:
+    textoCifrado: str = ""
+    for c in texto:
+        if (c.islower()):
+            limite = ord('z') - ord('a') + 1
+            letraA = ord('a')
+        else:
+            limite = ord('Z') - ord('A') + 1
+            letraA = ord('A')
+        textoCifrado += chr(letraA + ((ord(c) - letraA + desplazamiento) % limite))
+    return textoCifrado
+
 print("Ingrese la palabra")
 palabra = input()
 
 print("Ingrese el desplazamiento")
 desplazamiento = int(input())
 
-palabraCifrada = cifrarAbecedario(palabra, desplazamiento)
+palabraCifrada = cifrar(palabra, desplazamiento)
 
 print(palabraCifrada)
