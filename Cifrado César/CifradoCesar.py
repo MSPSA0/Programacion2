@@ -8,7 +8,7 @@ palabra: str
 palabraCifrada: str
 desplazamiento: int
 
-def cifrar(texto: str, desplazamiento: int) -> str:
+def cifrarAbecedario(texto: str, desplazamiento: int) -> str:
     textoCifrado: str = ""
     for c in texto:
         indice = ABECEDARIO.find(c.upper())
@@ -20,12 +20,18 @@ def cifrar(texto: str, desplazamiento: int) -> str:
         textoCifrado += c
     return textoCifrado
 
+def cifrarASCII(texto: str, desplazamiento: int) -> str:
+    textoCifrado: str = ""
+    for c in texto:
+        textoCifrado += chr(ord(c) + desplazamiento)
+    return textoCifrado
+
 print("Ingrese la palabra")
 palabra = input()
 
 print("Ingrese el desplazamiento")
 desplazamiento = int(input())
 
-palabraCifrada = cifrar(palabra, desplazamiento)
+palabraCifrada = cifrarAbecedario(palabra, desplazamiento)
 
 print(palabraCifrada)
