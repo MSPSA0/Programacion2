@@ -6,16 +6,16 @@ filas: int = 6
 columnas: int = 6
 matriz: list = []
 
-for i in range(columnas):
-    matriz.append([0] * filas)
-    for j in range(filas):
-        matriz[i][j] = 1 + j + i * filas
+for i in range(filas):
+    matriz.append([0] * columnas)
+    for j in range(columnas):
+        matriz[i][j] = 1 + j + i * columnas
 
 printMatrix(matriz)
 
-for i in range(columnas):
-    for j in range(filas // 2):
-        k = filas - j - 1
+for i in range(filas):
+    for j in range(columnas // 2):
+        k = columnas - j - 1
         v = matriz[i][j]
         matriz[i][j] = matriz[i][k]
         matriz[i][k] = v
